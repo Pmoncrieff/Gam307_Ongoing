@@ -25,6 +25,15 @@ public class EnemyManager : Singleton<EnemyManager> {
 	
     public void SpawnEnemy()
     {
+
+        int spawnNumber = 0;
+        if (GameManager.instance.difficulty == Difficulty.EASY)
+            spawnNumber = 1;
+        if (GameManager.instance.difficulty == Difficulty.MEDIUM)
+            spawnNumber = 2;
+        if (GameManager.instance.difficulty == Difficulty.HARD)
+            spawnNumber = 3;
+
         for (int i = 0; i < 5; i++)
         {
             //Random position

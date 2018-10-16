@@ -23,10 +23,10 @@ public class Enemy : MonoBehaviour {
 
     void OnMouseDown()
     {
-        StartCoroutine(FadeMe());
+        StartCoroutine(Die());
     }
 
-    IEnumerator FadeMe()
+    IEnumerator Die()
     {
 
         for (float f = 1f; f >= 0; f -= 0.01f)
@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour {
         }
         yield return new WaitForSeconds(2);
         EnemyManager.instance.enemyCount--;
+        EnemyManager.instance.SpawnEnemy;
         GameManager.instance.score += 100;
         Destroy(this.gameObject);
     }
